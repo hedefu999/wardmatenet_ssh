@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.PatientsUser" table="patientsUser" schema="wardmatenet">
+        <id name="userId">
+            <column name="userId" sql-type="int(11)"/>
+        </id>
+        <property name="userName">
+            <column name="userName" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="userPass">
+            <column name="userPass" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="regdate">
+            <column name="regdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="birthdate">
+            <column name="birthdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="phoneNum">
+            <column name="phoneNum" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="diseaseList">
+            <column name="diseaseList" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="gender">
+            <column name="gender" sql-type="enum('male', 'female')"/>
+        </property>
+    </class>
+</hibernate-mapping>

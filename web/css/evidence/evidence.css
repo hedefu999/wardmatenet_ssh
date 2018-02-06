@@ -1,0 +1,52 @@
+/*网站证据分类标签*/
+.healthtech{padding:0.1rem 0.8rem;float:right;border-radius:0.5rem;background: #c4e17f;}
+.healthtechborder{border-left: 4px solid #c4e17f;}
+.economic{padding:0.1rem 0.8rem;float:right;border-radius:0.5rem;background: #efad4d;}
+.economicborder{border-left: 4px solid #efad4d;}
+.clinicalguide{padding:0.1rem 0.8rem;float:right;border-radius:0.5rem;background: #5bb85d;}
+.guideborder{border-left: 4px solid #5bb85d;}
+.medicineinfo{padding:0.1rem 0.8rem;float:right;border-radius:0.5rem;background: #418bca;}
+.medicineborder{border-left: 4px solid #418bca;}
+.colorgraph {margin:0;height: 5px;border-top: 0;background: #c4e17f;border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.panelwrapper{border:1px solid #ccc;background: #eee;border-radius: 0.5rem;
+	box-shadow: 2px 2px 3px #ccc;padding:1rem;}
+
+#firstpanel{width: 80%;margin-left: auto;margin-right: auto;padding:8rem 8rem 4rem 8rem;}
+#firstpanel .title{font-size: 5rem;font-weight: lighter; text-align: center; margin:0 auto 2rem auto auto auto;color: #008080;}
+#firstpanel .vicetitle{width:80%;font-size:3rem;font-weight:lighter;text-align:right;margin:1rem;color: #008080;}
+#firstpanel .searchpanel{margin: auto;padding:1rem 2rem;}
+
+#secondpanel{height:4.5rem;background: #eee;z-index:1; padding: 1rem;border-bottom: 1px solid #ddd;box-shadow: 2px 2px 2px #ccc;}
+#secondpanel span{color:#008080;font-size:2.5rem;float: left;}
+#secondpanel .tools{float: right;margin-top:0.5rem; }
+#secondpanel .input-group{width: 45%;float: left;}
+.maincontent{width: 96%;margin: auto;clear: both;}
+
+#searchresults .container{margin:0;margin-top:1rem; }
+#searchresults .leftcata{padding:0 1rem;background: #eee;}
+#searchresults .leftcata .panel-title{color: #428bca;width: 10rem;}
+#searchresults .leftcata .panel-collapse label{display: block;}
+#searchresults .resultitems{border-bottom: 1px solid #ccc;padding:0 1rem 1rem 1rem;}
+#searchresults .resultitemfoot{margin-top:1rem; }
+#searchresults .resultitemfoot .date{float: right;margin-right:2rem; }
+#searchresults .pagination{float: right;}
+
+
+#instruction{width: 80%;margin: 1rem auto 1rem auto;background: #eee;}
+#instruction img{ width: 70%;margin: 1rem; margin: 20% auto;}
+#instruction h3{color: #468cc8;font-size: 3rem;}
+#instruction p{text-indent: 4rem;}
+
+#loading{padding-bottom: 8rem;width: 100%;margin: auto;}
+#loading .mvBox{height:15px; 
+	background:url(/imgs/evidence/loadingsliderbac.jpg) no-repeat center center;
+	position:relative; position:relative; margin:0 auto;}
+#loading .mvBtn{position:absolute; left:200px; top:0;}
+#loading .mvTxt{line-height:25px; text-align:center; font-size:24px; 
+	color:#29B6FF; 	margin:0 auto;}

@@ -1,0 +1,45 @@
+#vicemenu{background:rgba(0,128,128,0.4);}
+#vicemenu .btn{margin: 0.8rem 0;padding:0.5rem;}
+#vicemenu .btn-primary{background-color: rgba(0,136,204,0.5);}
+#vicemenu .btn-default{background-color: rgba(255,255,255,0.5);}
+#vicemenu .col{text-align: right;position: relative;padding: 0;text-align: center;}
+#vicemenu .col .badge{position: absolute;}
+#vicemenu .userentrance{margin-right: 2rem;}
+#vicemenu .avatar{margin-right: 1rem;}
+
+#mainbody{margin-top: 1rem;}
+#friendstabhead li a{border-radius: 0;}
+#friendstabbody .form-control{border-radius: 0;}
+#friendstabbody .input-group .btn{border-radius: 0;}
+#navgroup a{padding-top: 0;}
+#navgroup img{max-height:50px;max-height:50px;float: left;margin-right: 1rem;}
+#navgroup .badge{float: right;margin-top:-50px;}
+#navgroup .middle{width:12em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#navgroup .last{float: right;margin-top:-20px;}
+
+#navfriends a{padding-top: 0;}
+#navfriends img{max-height:50px;max-height:50px;float:left;margin-right: 1rem;}
+#navfriends .badge{float:right;margin-top:-50px;}
+#navfriends .middle{width:12em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#navfriends .last{float:right;margin-top:-20px;}
+
+#favornotes a{padding-top: 0;}
+#favornotes img{float: left;margin-right: 1rem;}
+
+#chatpanetitle{padding-top: 1rem; height: 5rem;border:1px solid #ccc;border-bottom:0;border-radius:4px 4px 0 0;}
+#chatpanetitle h4{margin-left: 3rem;float: left;}
+#chatpanetitle a{float: right;margin-right: 1rem; }
+#chatpanetitle button{float: right;margin: 1rem;}
+
+#chatpanebody{width:100%;height:40rem;background: #fff;overflow: auto;border:1px solid #ccc;border-bottom:0;}
+#chatpanebody .others{clear:both;float: left;margin:0.2rem;}
+#chatpanebody .me{clear:both;float: right;margin:0.2rem;}
+#chatpanebody .lmessage{padding:1rem;background: #c4e17f;border-radius:5px;max-width: 40rem;}
+#chatpanebody .rmessage{padding:1rem;background: #ddd;border-radius:5px;max-width: 40rem;}
+#chatpanebody .leftarrow{width:0;height:0;font-size:0;border:solid 10px;border-color:#fff #c4e17f #fff #fff;}
+#chatpanebody .rightarrow{width:0;height:0;font-size:0;border:solid 10px;border-color:#fff #fff #fff #ddd;}
+#chatpanebody .date{clear: both;background: #eee;border-radius: 1rem;margin:0 auto;padding:2px 10px;width: 14rem;text-align: center;}
+
+#chatpaneinput{padding: 0.5rem 2rem;border:1px solid #ccc;border-radius: 0 0 4px 4px;}
+#chatpaneinput .toolbox button{float: left;margin: 0.5rem 0.5rem;}
+#chatpaneinput .toolbox .btn-primary{float: right;}

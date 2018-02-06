@@ -1,0 +1,7 @@
+#vicemenu{background:rgba(0,128,128,0.4);}
+#vicemenu .btn{margin: 0.8rem 0;padding:0.5rem;}
+#vicemenu .btn-primary{background-color: rgba(0,136,204,0.5);}
+#vicemenu .btn-default{background-color: rgba(255,255,255,0.5);}
+#vicemenu .col{text-align: right;position: relative;padding: 0;text-align: center;}
+#vicemenu .userentrance{margin-right: 2rem;}
+#vicemenu .avatar{margin-right: 1rem;}

@@ -1,0 +1,29 @@
+html {font-size: 62.5%;}
+body {font-size: 1.6rem;font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, simsun, sans-serif;}
+#navbar{margin-bottom: 0; }
+#navbar #navbar-logo {padding: 0.4rem;margin: 0 3rem; }
+#navbar #navbar-logo img{height: 4.4rem;}
+#navbar .navbar-brand{font-size: 3rem;color: #008080;}
+#index_banner{position: relative;}
+#index_banner .bannerscreen{position: absolute;width:100%;top:0;background: rgba(0,0,0,0.5);}
+#index_banner .bannerinstru{position: absolute;width: 100%;top:0;color: white;}
+#index_banner .bannerinstru .bannertitle{text-align: center;font-size: 4rem;font-weight:lighter;}
+#index_banner .bannerinstru .bannerlink{text-align: center;font-size: 3rem;font-weight:lighter;}
+#index_banner .bannerlink a{padding: 0.5rem 1rem;background: rgba(255,255,255,0.3);border-radius: 0.6rem;}
+#index_banner .bannerdesc{position:absolute;width:100%;bottom:1rem;text-align: center;font-size:1.6rem; }
+
+#instruction .title h2 {color: #0059B2;text-align: center;letter-spacing: 1px;margin-top: 10px;}
+#instruction .title p {color: #999;text-align: center;letter-spacing: 1px;margin: 20px 0 40px 0;}
+#instruction .row .media-left{height: 12rem;}
+#instruction .detail img{width: 10rem;}
+#instruction .detail p{text-indent: 2rem;}
+#entrance span{color: #008080;}
+#myapps .col{text-align:center;}
+#myapps .col img{margin:auto;width:30%;}
+@media screen and (max-width: 300px) {
+    body {
+        background-color:lightblue;
+    }
+}
+
+

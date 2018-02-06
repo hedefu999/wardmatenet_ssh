@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
+    <package name="defult" extends="struts-default" namespace="/">
+
+        <interceptors>
+            <interceptor name="loginValidation" class="com.interceptor.LoginInterceptor"/>
+            <interceptor-stack name="commonStack">
+                <interceptor-ref name="loginValidation">
+                    <param name="excludeMethods">signin,signup,logon,save</param>
+                </interceptor-ref>
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="commonStack"/>
+        <global-results>
+            <result name="signin">pages/userInfo/signin.jsp</result>
+            <result name="index" type="redirect">index.jsp</result>
+        </global-results>
+
+        <action name="index" class="indexAction" method="execute">
+            <result name="success">index.jsp</result>
+        </action>
+
+        <action name="patients-*" class="patientsAction" method="{1}">
+            <result name="success">index.jsp</result>
+            <result name="signup">pages/userInfo/signup.jsp</result>
+            <result name="signupsuccess">pages/feedback/signup-success.jsp</result>
+            <result name="signinsuccess">index.jsp</result>
+            <result name="details">pages/userInfo/userprofile.jsp</result>
+        </action>
+        <action name="evimed*" class="evimedAction" method="{1}">
+            <result name="success">pages/evimed/evimed.jsp</result>
+        </action>
+        <action name="evidence*" class="evidenceAction" method="{1}">
+            <result name="success">pages/evidence/evidence.jsp</result>
+        </action>
+        <action name="sns*" class="snsAciton" method="{1}">
+            <result name="success">pages/sns/snschats.jsp</result>
+            <result name="hall">pages/sns/snshall.jsp</result>
+            <result name="chats">pages/sns/snschats.jsp</result>
+        </action>
+        <action name="healman*" class="healmanAction" method="{1}">
+            <result name="success">pages/healman/healman.jsp</result>
+        </action>
+        <action name="validationCodeImg" class="validationCode" method="execute">
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">imageStream</param>
+                <param name="bufferSize">2048</param>
+            </result>
+        </action>
+    </package>
+    <package name="df" extends="json-default" namespace="/ajax">
+        <action name="*" class="jsonAction" method="{1}">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+    </package>
+
+</struts>

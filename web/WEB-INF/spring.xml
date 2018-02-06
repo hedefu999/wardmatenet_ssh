@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:property-placeholder location="/WEB-INF/webappconfig.properties"/>
+    <!--使用junit测试时默认Spring配置文件位于classpath下，需要在此处修改配置-->
+    <!--<context:property-placeholder location="file:../web/WEB-INF/webappconfig.properties"/>-->
+    <context:component-scan base-package="com.*"/>
+
+    <bean id="indexAction" class="com.action.IndexAction"/>
+    <bean id="patientsAction" class="com.action.PatientsAction" p:userService-ref="userService"/>
+    <bean id="evimedAction" class="com.action.EviMedAction"/>
+    <bean id="evidenceAction" class="com.action.EvidenceAction"/>
+    <bean id="snsAciton" class="com.action.SNSAction" p:nimHandler-ref="nimHandler"/>
+    <bean id="healmanAction" class="com.action.HealManAction"/>
+    <bean id="validationCode" class="com.action.ValidationImgAction"/>
+    <bean id="jsonAction" class="com.action.JSONAction"/>
+
+    <bean id="baseDao" class="com.dao.BaseDao" p:sessionFactory-ref="sessionFactory"/>
+    <bean id="userDao" class="com.dao.PatientsUserDao" p:sessionFactory-ref="sessionFactory"/>
+    <bean id="userService" class="com.service.PatientsUserService" p:userDao-ref="userDao"/>
+
+    <bean id="nimHandler" class="com.utils.NIMHandler" p:appKey="${nim.appkey}"
+    p:appSecret="${nim.appSecret}" p:nonce="${nim.nonce}"/>
+
+
+
+    <bean id="c3p0DataBase" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="driverClass" value="${jdbc.driverClass}"/>
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
+        <property name="initialPoolSize" value="${jdbc.initPoolSize}"/>
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
+    </bean>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+    p:dataSource-ref="c3p0DataBase" p:configLocation="classpath:com/entity/hibernate.cfg.xml"
+    p:mappingLocations="classpath:com/entity/*.hbm.xml"/>
+    <!--配置事务管理器-->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+          p:sessionFactory-ref="sessionFactory"/>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="*"  rollback-for="java.lang.Exception" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="txCutPoint" expression="execution(* com.dao.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txCutPoint"/>
+    </aop:config>
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+</beans>
